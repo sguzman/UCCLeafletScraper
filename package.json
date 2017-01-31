@@ -1,0 +1,12 @@
+{
+  "name": "UCCLeafletScraper",
+  "version": "1.0.0",
+  "description": "A leaflet map UCC church scraper for the US",
+  "main": "app/html/leaflet.html",
+  "repository": "https://github.com/sguzman/UCCLeafletScraper",
+  "author": "Salvador Guzman <guzmansalv@gmail.com>",
+  "license": "The Unlicensed",
+  "dependencies": {
+    "leaflet": "^1.0.3"
+  }
+}

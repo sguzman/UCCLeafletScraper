@@ -239,3 +239,7 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
+
+
+# ignore yarn lock file
+yarn.lock
