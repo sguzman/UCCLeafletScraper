@@ -2,7 +2,6 @@
  * Created by salvadorguzman on 1/30/17.
  */
 let rp = require('request-promise');
-rp.debug = true;
 
 let ucc = {
     getChurches(lat, long){
