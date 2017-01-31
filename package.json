@@ -6,7 +6,26 @@
   "repository": "https://github.com/sguzman/UCCLeafletScraper",
   "author": "Salvador Guzman <guzmansalv@gmail.com>",
   "license": "The Unlicensed",
+  "scripts": {
+    "webpack": "node node_modules/webpack/bin/webpack.js --progress --colors --verbose app/js/map.js app/js/main.js"
+    "clean": "rm -f app/js/main.js"
+  },
   "dependencies": {
     "leaflet": "^1.0.3"
+  },
+  "resolutions": {
+    "async": "2.1.4",
+    "supports-color": "3.2.3",
+    "yargs": "6.6.0",
+    "readable-stream": "2.1.5",
+    "inherits": "2.0.1",
+    "minimist": "1.2.0",
+    "punycode": "1.3.2",
+    "camelcase": "3.0.0",
+    "cliui": "3.2.0",
+    "assert-plus": "1.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^2.2.1"
   }
 }
