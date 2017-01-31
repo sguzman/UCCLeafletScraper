@@ -19,6 +19,8 @@
     <div id="map"></div>
     <script type="application/javascript" src="../js/map.js"></script>
     <script>
+        let cache = {};
+
         map.on('click', (x) => {
             console.log(`Clicked on ${x.latlng}`);
             ucc.getChurches(x.latlng.lat, x.latlng.lng)
@@ -28,7 +30,13 @@
                 .then(function (x) {
                     let array = x.d;
                     array.map(function (y) {
-                        layer.addLayer(L.marker([y.LATITUDE, y.LONGITUD, y]));
+                        let key = `${y.LATITUDE}${y.LONGITUD}`;
+                        if (cache[key]) {
+                            // Do nothing
+                        } else {
+                            cache[key] = y;
+                            layer.addLayer(L.marker([y.LATITUDE, y.LONGITUD]));
+                        }
                     });
                 });
 
