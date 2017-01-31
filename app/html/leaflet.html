@@ -14,9 +14,25 @@
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
     <script type="application/javascript" src="../js/churches.js"></script>
-    <script defer type="application/javascript" src="../js/map.js"></script>
 </head>
 <body>
     <div id="map"></div>
+    <script type="application/javascript" src="../js/map.js"></script>
+    <script>
+        map.on('click', (x) => {
+            console.log(`Clicked on ${x.latlng}`);
+            ucc.getChurches(x.latlng.lat, x.latlng.lng)
+                .then(function (x) {
+                return Promise.resolve(x);
+            })
+                .then(function (x) {
+                    let array = x.d;
+                    array.map(function (y) {
+                        layer.addLayer(L.marker([y.LATITUDE, y.LONGITUD, y]));
+                    });
+                });
+
+        });
+    </script>
 </body>
 </html>

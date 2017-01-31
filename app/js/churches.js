@@ -9,13 +9,7 @@ let ucc = {
         const options = {
             method: 'POST',
             uri: 'http://uccwebservices.ucc.org/Mapping/FindAChurch.asmx/GetChurches',
-            body: JSON.stringify({
-                'latitude': lat,
-                'longitude': long,
-                'numchurches': 10000,
-                'miles': 10000,
-                'ONA_only': false
-            }),
+            body: JSON.stringify({latitude: lat, longitude: long, numchurches: 1000, miles: 10000, ONA_only: false}),
             headers: {
                 'Host': 'uccwebservices.ucc.org',
                 'Connection': 'keep-alive',
@@ -29,7 +23,9 @@ let ucc = {
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Accept-Language': 'en-US,en;q=0.8',
                 'Cookie': 'ASP.NET_SessionId=t1mseotxvuvofkw3j1j3a3o0',
-            }
+            },
+            transform: JSON.parse,
+            simple: true
         };
 
         return rp(options);
