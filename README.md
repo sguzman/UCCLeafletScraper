@@ -8,8 +8,8 @@ This application helps you explore all the UCC churches in the US.
 #### How to use
 1. Click on map
 2. Keep clicking on map...
-3. Every time you click, the map is updated with the closest 256 maps.
+3. Every time you click, the map is updated with the closest 256 churches.
 
 
 ##### Refenrence
-* [UCC site](http://www.ucc.org/find)
+* [UCC site](http://www.ucc.org/find)****
